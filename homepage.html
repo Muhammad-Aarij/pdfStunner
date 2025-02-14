@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pdfStunner</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background-color: #ffffff;
+        padding: 15px 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0px 3px 10px rgba(217, 217, 217, 1);
+      }
+      .header div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /* border: 2px solid red; */
+      }
+      .header img {
+        height: 70px;
+      }
+      .header nav {
+        /* border: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      .header nav a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 400;
+        display: inline-block;
+      }
+      header nav .contact {
+        display: flex;
+        align-items: center;
+        padding: 10px 30px;
+        color: rgb(255, 255, 255);
+        background-color: #818181;
+      }
+      .container {
+        padding: 0px 10px;
+        margin-top: 20px;
+        margin: 0px auto;
+        max-width: 1000px;
+      }
+      .download-button {
+        background-color: #43a047;
+        color: white;
+        box-shadow: rgba(99, 99, 99, 0.068) 0px 2px 8px 0px;
+        border-radius: 10px;
+        padding: 30px;
+        width: 100%;
+        font-size: 20px;
+        border: none;
+        cursor: pointer;
+      }
+      .download-button a,
+      .download-button2 a {
+        text-decoration: none;
+        color: white;
+      }
+      .download-button2 {
+        background-color: #121824;
+        color: white;
+        box-shadow: rgba(99, 99, 99, 0.068) 0px 2px 8px 0px;
+        border-radius: 10px;
+        padding: 15px 40px;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+      }
+      .features {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        /* flex-wrap: wrap; */
+      }
+      .feature {
+        border-radius: 7px;
+        font-size: 13px;
+        color: #5e5e5e;
+        border: 0.5px solid rgb(223, 223, 223, 0.4);
+        background-color: rgba(223, 223, 223, 0.356);
+        margin: 10px;
+        padding: 20px 20px;
+        width: 25%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .feature img {
+        width: 50px;
+        height: 50px;
+      }
+      .new-features {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .new-feature {
+        margin: 20px 0;
+        text-align: left;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 40px 60px;
+      }
+      .reverse {
+        flex-direction: row-reverse;
+        border-radius: 10px;
+        background-color: rgba(114, 114, 114, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .new-feature div {
+        width: 55%;
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* border: 2px solid red; */
+      }
+      .new-feature img {
+        width: 30%;
+        /* height: 30px; */
+        vertical-align: middle;
+      }
+      .new-feature p {
+        font-size: 14px;
+        display: inline-block;
+        /* margin: 0px 10px; */
+      }
+
+      .new-feature h2 {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 600;
+        color: #383838;
+      }
+
+      .section1 {
+        /* min-height: 40vh; */
+        margin: 60px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        color: #333;
+        flex-wrap: wrap;
+      }
+      .section1 strong {
+        font-weight: 600;
+        color: #383838;
+      }
+      .section1-inside div {
+        text-align: left;
+        /* background-color: rgba(241, 241, 241, 0.466); */
+        background-color: #121824;
+        padding: 20px;
+        color: white;
+        font-size: 13px;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+          rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+      }
+      .section1-inside div strong {
+        color: white;
+      }
+      .section1-inside {
+        text-align: left;
+        width: 38%;
+      }
+      .section1-right {
+        width: 45%;
+        text-align: right;
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: start;
+        gap: 40px;
+      }
+      .section1-right img {
+        position: relative;
+        animation: moveArrow 3s ease-in-out infinite;
+      }
+      .footer {
+        padding: 0px 20px;
+        color: #121824;
+      }
+      .footer div {
+        text-decoration: none;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+      }
+      .footer div a,
+      .footer p {
+        text-decoration: none;
+        color: #979797;
+        font-size: 13px;
+      }
+
+      @keyframes moveArrow {
+        0% {
+          left: 0;
+        }
+        50% {
+          left: 10px;
+        }
+        100% {
+          left: 0;
+        }
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        .header div {
+          flex-direction: column;
+          gap: 20px;
+        }
+        .section1 {
+          flex-direction: column;
+          align-items: center;
+        }
+        .section1-inside,
+        .section1-right {
+          width: 90%;
+          margin-top: 20px;
+        }
+        .features {
+          flex-direction: column;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        .feature {
+          width: 80%;
+          margin-bottom: 20px;
+        }
+        .new-feature {
+          flex-direction: column-reverse;
+        }
+        .new-feature div {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .download-button {
+          font-size: 18px;
+          padding: 20px;
+        }
+      }
+      .contact {
+        color: white;
+        display: flex;
+        align-items: center;
+        background-color: #dbdbdb;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div>
+        <a href="homepage.html">
+          <img src="LOGO.png" alt="Couple of Search Logo" />
+        </a>
+        <nav>
+          <a style="width: 50%" href="#"
+            >Added rich search engine feature to enhance your navigation through
+            the web</a
+          >
+          <a
+            class="contact"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
+            target="_blank"
+            >Contact Us</a
+          >
+        </nav>
+      </div>
+    </div>
+    <div class="container">
+      <div class="section1">
+        <div class="section1-inside">
+          <p><strong>Step 1:</strong> Click Download Now button</p>
+          <p><strong>Step 2:</strong> Click PDFSuperhero.exe</p>
+          <p><strong>Step 3:</strong>Follow the on-screen instructions</p>
+          <div>
+            <p><strong>No. of files:</strong> Unlimited</p>
+            <p>
+              <strong>File types:</strong> Doc, PDF, XLS, JPG, HTML, and more
+            </p>
+            <p>Runs on: Windows 10, 11</p>
+          </div>
+        </div>
+        <div class="section1-right">
+          <img
+            style="width: 120px"
+            src="noun-arrow-4110991.png"
+            alt="Support Icon"
+          />
+          <div>
+            <a href="Download.html">
+              <button class="download-button">Download</button>
+            </a>
+            <p>
+              By clicking the button above and installing the product, I accept
+              and agree to abide by the Terms and Privacy Policy.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <img src="folder.png" alt="Support Icon" />
+          <p>Supports - doc, ppt, html and many more</p>
+        </div>
+        <div class="feature">
+          <img src="pdf.png" alt="Convert Icon" />
+          <p>Convert pdf format files to other types</p>
+        </div>
+        <div class="feature">
+          <img src="noun-thumbs-up-7572354.png" alt="Accurate Icon" />
+          <p>Accurate results</p>
+        </div>
+        <div class="feature">
+          <img src="noun-search-7518310.png" alt="Search Icon" />
+          <p>
+            Rich search engine feature to enhance your navigation through the
+            web
+          </p>
+        </div>
+      </div>
+
+      <div class="new-features">
+        <div class="new-feature">
+          <div>
+            <h2>With PdfStunner you will convert your Documents Easily</h2>
+            <p>
+              PdfStunner can convert documents easily. Free of charge.
+              Convert PDF to DOC and DOC to PDF with a simple drag-and-drop
+              interface.
+            </p>
+            <a href="Download.html">
+              <button class="download-button2">Download</button>
+            </a>
+          </div>
+          <img
+            src="noun-document-conversion-6187534.png"
+            alt="PDF Conversion Icon"
+          />
+        </div>
+        <div class="new-feature reverse">
+          <div>
+            <h2>With PdfStunner you will convert your Documents Easily</h2>
+            <p>
+              PdfStunner can convert documents easily. Free of charge.
+              Convert PDF to DOC and DOC to PDF with a simple drag-and-drop
+              interface.
+            </p>
+            <a href="Download.html">
+              <button class="download-button2">Download</button>
+            </a>
+          </div>
+          <img src="noun-doc-2459307.png" alt="PDF Conversion Icon" />
+        </div>
+        <div class="new-feature">
+          <div>
+            <h2>With PdfStunner you will convert your Documents Easily</h2>
+            <p>
+              PdfStunner can convert documents easily. Free of charge.
+              Convert PDF to DOC and DOC to PDF with a simple drag-and-drop
+              interface.
+            </p>
+            <a href="Download.html">
+              <button class="download-button2">Download</button>
+            </a>
+          </div>
+          <img src="noun-search-7518310.png" alt="PDF Conversion Icon" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div>
+        <a href="Terms.html">Terms</a>
+        <a href="Privacy.html">Privacy</a>
+        <a href="uninstall.html">Uninstall</a>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
+          >Contact</a
+        >
+      </div>
+      <p>
+        © Any third party products, brands or trademarks listed above are the
+        sole property of their respective owner.
+      </p>
+    </div>
+  </body>
+</html>
