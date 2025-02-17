@@ -24,7 +24,7 @@
   min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("ii");
+  background-image: url("iiif-service_pnp_highsm_18300_18386-full-pct_6.25-0-default.jpg");
 }
 
 html {
@@ -85,13 +85,13 @@ html {
 }
 
 .topbar h1 {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 400;
   margin: 10px 0 10px;
 }
 
 .topbar h3 {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 28px;
   margin: 0;
@@ -103,11 +103,11 @@ html {
 }
 
 .installer-box h2 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   margin: 0;
   margin-bottom: 14px;
-  color: #0881b7;
+  color: #ff5a00;
 }
 
 .installer-box h3 {
@@ -122,7 +122,7 @@ html {
   padding: 10px;
   overflow: auto;
   height: 250px;
-  border: 1px solid #0881b7;
+  border: 1px solid #ff5a00;
 }
 
 .installer-box .terms p {
@@ -155,7 +155,7 @@ html {
 
 .installer-box .bottom-row .bottom-btn .install {
   right: 5px;
-  background: #3b72d9;
+  background: #ff5a00;
   animation: coloranimate 4s infinite ease-in-out;
   transition: 0.4s all ease;
   background-size: 200% 200%;
@@ -175,6 +175,7 @@ html {
     background: #3b72d9;
   }
 }
+
 
 .bottom-row {
   position: relative;
@@ -207,7 +208,7 @@ position: relative;
 .progress-bar .bar {
   position: absolute;
   height: 100%;
-  background: #0da846;
+  background: #ff5a00;
   border-radius: 0 20px 20px 0;
   color: #000000;
   line-height: 22px;
@@ -243,14 +244,15 @@ position: relative;
   width: 100%;
   height: 48px;
   border: 2px solid #fff;
-  box-shadow: 0 0 40px 0px #3b72d9;
-  background: rgb(59, 114, 217);
+  /* box-shadow: 0 0 20px 0px #ff5a00; */
+  background: #ff5a00;
   background: linear-gradient(
     90deg,
-    rgb(26, 71, 155) 0%,
-    rgba(109, 154, 237, 1) 50%,
-    rgb(26, 71, 155) 100%
+    #ff5a00 0%,
+    #c2815f 50%,
+    #dfa07e 100%
   );
+  border-radius: 5px;
   animation: animate 1s infinite linear,
     coloranimate1 4s infinite ease-in-out;
   background-size: 200% 200%;
@@ -537,9 +539,9 @@ position: relative;
       />
       <!-- topbar-->
       <div class="topbar">
-        <img src="LOGO.png" class="logo" />
-        <h1>PDF Professor: Professional Document Management Made Simple</h1>
-        <h3>
+        <img style="z-index: 1;" src="LOGO.png" class="logo" />
+        <h1 style="z-index: 1;">PDF Professor: Professional Document Management Made Simple</h1>
+        <h3 style="z-index: 1;">
           Transform, Edit, and Organize Your Documents with Professional-Grade
           Tools
         </h3>
