@@ -4,531 +4,518 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pdfStunner</title>
-    <link
-      rel="icon"
-      type="image/ico"
-      href="data:image/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAHDSURBVDhPlVM9T8JQFH1tEygbgz/gOUBg0f4Ah5I4uNkRnRgcHQATlMFYWAQX6uJo6iQmxnRwcFL8ASZdTBuIEWcH2VqRvnovKaRNENMmTT/uveeec+59HFlytfP5MvN9s27bvb/SuL8CWIwxnxCZn0zU2mBgLspdDuB5Q8bziuB5WmyADqVpVxQNjuNGR5alxJaABa1czgQJGnigxwY4zeVk6K74vi8BgBwboJXPG0nHKYEMpE8BRP3XRHQeOm5PEzlOIjDCyDv4AfHz8FjnU0DKkFyCYAm1J11XrgyHIwQIYrLouhoaG5YUBqCQq4PuL87zrg77fSNMGUB0npB3RkhhIUDQiRLGNgWeH9Rs+3kGgCP9EcV1j7GMOB7fzphNlYaTvlOpJ/jGQmTjgwcSeGHCcxXGiX5QYGjCXky3NAIQ7H26sdOhsP9G8+agBIZp6AvcveC/2exWVQBTQMYwAgAaVZ4x83hXIzxM4OS6gvFeAKA3ih3kK6vdqhQ+G3MJZ5mMxARBvyzs39HPN1Z4fdgTHUcaJxIynIfyxVbtfu3jZWXDfizWLQslRiUEJsrwVHH/w13a2ayCIBBD2uqMPtb8AkZa3hE0MijEAAAAAElFTkSuQmCC"
-    />
+    <link rel="icon" type="image/ico" href="LOGO.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <style>
-   body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  font-size: 14px;
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-image: url("iiif-service_pnp_highsm_18300_18386-full-pct_6.25-0-default.jpg");
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-.hide {
-  display: none !important;
-}
-
-.show {
-  display: block !important;
-}
-
-.installer {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-.installer:after {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  content: "";
-  background: #ffffffe6;
-}
-
-.installer .close-icon {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.topbar {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 0 30px;
-  box-sizing: border-box;
-  color: #000;
-  text-align: center;
-  z-index: 1;
-}
-
-.topbar .icon {
-  max-width: 240px;
-  width: 80%;
-}
-
-.topbar .logo {
-  width: 162px;
-  margin: 20px auto;
-}
-
-.topbar h1 {
-  font-size: 25px;
-  font-weight: 400;
-  margin: 10px 0 10px;
-}
-
-.topbar h3 {
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 28px;
-  margin: 0;
-}
-
-.main-content {
-  padding: 60px 30px 30px;
-  position: relative;
-}
-
-.installer-box h2 {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0;
-  margin-bottom: 14px;
-  color: #ff5a00;
-}
-
-.installer-box h3 {
-  font-size: 16px;
-  font-weight: normal;
-}
-
-.installer-box .terms {
-  font-size: 14px;
-  line-height: 19px;
-  background: #fff;
-  padding: 10px;
-  overflow: auto;
-  height: 250px;
-  border: 1px solid #ff5a00;
-}
-
-.installer-box .terms p {
-  margin: 0 0 16px 0;
-}
-
-.installer-box .terms h4 {
-  margin: 0 0 6px 0;
-}
-
-.installer-box .check {
-  max-width: 50%;
-  display: flex;
-}
-
-.installer-box .check input {
-  width: 22px;
-  height: 22px;
-}
-
-.installer-box .check span {
-  padding-top: 4px;
-  padding-left: 5px;
-}
-
-.installer-box {
-  padding: 34px 48px 20px;
-  max-width: 970px;
-}
-
-.installer-box .bottom-row .bottom-btn .install {
-  right: 5px;
-  background: #ff5a00;
-  animation: coloranimate 4s infinite ease-in-out;
-  transition: 0.4s all ease;
-  background-size: 200% 200%;
-}
-
-@keyframes coloranimate {
-  0% {
-    background: #3b72d9;
-  }
-  33% {
-    background: #23b01f;
-  }
-  66% {
-    background: #b39f04;
-  }
-  100% {
-    background: #3b72d9;
-  }
-}
-
-
-.bottom-row {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 26px;
-  font-size: 12px;
-}
-
-.bottom-row .bottom-btn {
-  position: relative;
-  font-size: 16px;
-  text-align: left;
-  width: 160px;
-}
-
-.progress-bar {
-  width: 300px;
-  height: 20px;
-  background: #fff;
-  border: 1px solid #000;
-  margin-top: 20px;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-position: relative;
-}
-
-.progress-bar .bar {
-  position: absolute;
-  height: 100%;
-  background: #ff5a00;
-  border-radius: 0 20px 20px 0;
-  color: #000000;
-  line-height: 22px;
-  width: 0%;
-}
-
-.progress-bar .bar .count {
-  display: block;
-  width: 300px;
-}
-.count{
-  position: absolute;
-  left: 50%;
-
-}
-
-@keyframes slide {
-  0% {
-    left: -60px;
-  }
-
-  50% {
-    left: -46px;
-  }
-
-  100% {
-    left: -60px;
-  }
-}
-
-.bottom-btn .next-btn {
-  margin-top: 20px;
-  width: 100%;
-  height: 48px;
-  border: 2px solid #fff;
-  /* box-shadow: 0 0 20px 0px #ff5a00; */
-  background: #ff5a00;
-  background: linear-gradient(
-    90deg,
-    #ff5a00 0%,
-    #c2815f 50%,
-    #dfa07e 100%
-  );
-  border-radius: 5px;
-  animation: animate 1s infinite linear,
-    coloranimate1 4s infinite ease-in-out;
-  background-size: 200% 200%;
-  cursor: pointer;
-  color: #fff;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bottom-btn .next-btn img {
-  vertical-align: middle;
-}
-
-.bottom-btn .install {
-  width: 125px;
-  height: 37px;
-  background: #000;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 8px;
-  position: absolute;
-  right: -125px;
-  top: 0;
-  cursor: pointer;
-}
-
-.popup-overlay {
-  position: fixed;
-  background: #00000091;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: 99;
-}
-
-.popup {
-  width: 300px;
-  height: 100px;
-  background: #fff;
-  padding: 20px;
-  box-sizing: border-box;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.popup .no-btn {
-  width: 130px;
-  height: 30px;
-  cursor: pointer;
-  background: #3b72d9;
-  border: none;
-  color: #fff;
-  font-size: 16px;
-}
-
-.popup .yes-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #8b8b8b;
-}
-
-.popup-btn {
-  display: flex;
-  justify-content: start;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.installer-box.new {
-  max-width: 780px;
-  width: 100%;
-  padding: 20px;
-  background: #fff;
-  z-index: 1;
-  position: relative;
-  box-sizing: border-box;
-  margin: auto;
-}
-
-.installer-box.new .bottom-row .bottom-btn .install {
-  right: -125px;
-}
-
-.load {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 15px;
-  cursor: wait;
-  position: fixed;
-  background: #ffffffe6;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: 99;
-}
-
-.load .loading {
-  width: 80px;
-  transform: rotate(0deg);
-  animation: flip 3s infinite linear;
-  position: relative;
-  z-index: -1;
-}
-
-@keyframes flip {
-  0% {
-    transform: scaleX(1);
-  }
-
-  50% {
-    transform: scaleX(-1);
-  }
-
-  100% {
-    transform: scaleX(1);
-  }
-}
-
-.privacy-overlay,
-.terms-overlay {
-  position: fixed;
-  background: #00000091;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  z-index: 99;
-}
-
-.privacy-overlay .popup,
-.terms-overlay .popup {
-  width: 60vw;
-  height: 60vh;
-  padding-top: 40px;
-}
-
-.close-privacy,
-.close-terms {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-}
-
-.terms-link,
-.privacy-link {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.inner-page .content h4 {
-  margin: 30px 0 10px;
-}
-
-.inner-page .content p.bullet {
-  margin: 10px 0;
-}
-
-.privacy-overlay .popup > div,
-.terms-overlay .popup > div {
-  height: 100%;
-  overflow: auto;
-}
-
-.sub-header {
-  text-align: center;
-  background: #3b72d9;
-  padding: 20px 0;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
-@media screen and (max-width: 1120px) {
-  .topbar {
-    min-width: 200px;
-  }
-
-  .installer-box h3 {
-    max-width: 500px;
-  }
-}
-
-@media screen and (max-width: 1035px) {
-  .installer-box.new .check {
-    max-width: 270px;
-    font-size: 12px;
-  }
-
-  .bottom-row .bottom-btn {
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  /* Smaller screens */
-  .topbar h1 {
-    font-size: 24px;
-  }
-
-  .topbar h3 {
-    font-size: 18px;
-  }
-
-  .installer-box {
-    padding: 20px;
-  }
-
-  .installer-box h2 {
-    font-size: 18px;
-  }
-
-  .installer-box h3 {
-    font-size: 14px;
-  }
-
-  .bottom-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .progress-bar {
-    /* border: 2px solid red; */
-    width: 60%;
-    margin-top: 15px auto;
-  }
-
-  .bottom-btn .next-btn {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  .installer-box .check input {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  /* Mobile screens */
-  .topbar h1 {
-    font-size: 20px;
-  }
-
-  .topbar h3 {
-    font-size: 16px;
-  }
-
-  .installer-box {
-    padding: 15px;
-  }
-
-  .installer-box h2 {
-    font-size: 16px;
-  }
-
-  .installer-box h3 {
-    font-size: 12px;
-  }
-
-  .bottom-btn .install {
-    width: 100%;
-    height: 40px;
-    font-size: 14px;
-  }
-
-  
-}
-
+    body {
+      font-family: "Roboto", sans-serif;
+      margin: 0;
+      font-size: 14px;
+      min-height: 100vh;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("elegant-library-interior-stockcake.jpg");
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    .show {
+      display: block !important;
+    }
+
+    .installer {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .installer:after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      content: "";
+      background: rgba(255, 255, 255, 0.788);
+    }
+
+    .installer .close-icon {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 30px;
+      box-sizing: border-box;
+      color: #000;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .topbar .icon {
+      max-width: 240px;
+      width: 80%;
+    }
+
+    .topbar .logo {
+      width: 162px;
+      margin: 20px auto;
+    }
+
+    .topbar h1 {
+      font-size: 25px;
+      font-weight: 400;
+      margin: 10px 0 10px;
+    }
+
+    .topbar h3 {
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 28px;
+      margin: 0;
+    }
+
+    .main-content {
+      padding: 60px 30px 30px;
+      position: relative;
+    }
+
+    .installer-box h2 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0;
+      margin-bottom: 14px;
+      color: #ff5a00;
+    }
+
+    .installer-box h3 {
+      font-size: 16px;
+      font-weight: normal;
+    }
+
+    .installer-box .terms {
+      font-size: 14px;
+      line-height: 19px;
+      background: #fff;
+      padding: 10px;
+      overflow: auto;
+      height: 250px;
+      border: 1px solid #ff5a00;
+    }
+
+    .installer-box .terms p {
+      margin: 0 0 16px 0;
+    }
+
+    .installer-box .terms h4 {
+      margin: 0 0 6px 0;
+    }
+
+    .installer-box .check {
+      max-width: 50%;
+      display: flex;
+    }
+
+    .installer-box .check input {
+      width: 22px;
+      height: 22px;
+    }
+
+    .installer-box .check span {
+      padding-top: 4px;
+      padding-left: 5px;
+    }
+
+    .installer-box {
+      padding: 34px 48px 20px;
+      max-width: 970px;
+    }
+
+    .installer-box .bottom-row .bottom-btn .install {
+      right: 5px;
+      background: #ff5a00;
+      animation: coloranimate 4s infinite ease-in-out;
+      transition: 0.4s all ease;
+      background-size: 200% 200%;
+    }
+
+    @keyframes coloranimate {
+      0% {
+        background: #3b72d9;
+      }
+      33% {
+        background: #23b01f;
+      }
+      66% {
+        background: #b39f04;
+      }
+      100% {
+        background: #3b72d9;
+      }
+    }
+
+    .bottom-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 26px;
+      font-size: 12px;
+    }
+
+    .bottom-row .bottom-btn {
+      position: relative;
+      font-size: 16px;
+      text-align: left;
+      width: 160px;
+    }
+
+    .progress-bar {
+      width: 300px;
+      height: 20px;
+      background: #fff;
+      border: 1px solid #000;
+      margin-top: 20px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .progress-bar .bar {
+      position: absolute;
+      height: 100%;
+      background: #ff5a00;
+      border-radius: 0 20px 20px 0;
+      color: #000000;
+      line-height: 22px;
+      width: 0%;
+    }
+
+    .progress-bar .bar .count {
+      display: block;
+      width: 300px;
+    }
+    .count {
+      position: absolute;
+      left: 50%;
+    }
+
+    @keyframes slide {
+      0% {
+        left: -60px;
+      }
+
+      50% {
+        left: -46px;
+      }
+
+      100% {
+        left: -60px;
+      }
+    }
+
+    .bottom-btn .next-btn {
+      margin-top: 20px;
+      width: 100%;
+      height: 48px;
+      border: 2px solid #fff;
+      /* box-shadow: 0 0 20px 0px #ff5a00; */
+      background: #ff5a00;
+      background: linear-gradient(90deg, #ff5a00 0%, #c2815f 50%, #dfa07e 100%);
+      border-radius: 5px;
+      animation: animate 1s infinite linear,
+        coloranimate1 4s infinite ease-in-out;
+      background-size: 200% 200%;
+      cursor: pointer;
+      color: #fff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bottom-btn .next-btn img {
+      vertical-align: middle;
+    }
+
+    .bottom-btn .install {
+      width: 125px;
+      height: 37px;
+      background: #000;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 8px;
+      position: absolute;
+      right: -125px;
+      top: 0;
+      cursor: pointer;
+    }
+
+    .popup-overlay {
+      position: fixed;
+      background: #00000091;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: 99;
+    }
+
+    .popup {
+      width: 300px;
+      height: 100px;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .popup .no-btn {
+      width: 130px;
+      height: 30px;
+      cursor: pointer;
+      background: #3b72d9;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .popup .yes-btn {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      color: #8b8b8b;
+    }
+
+    .popup-btn {
+      display: flex;
+      justify-content: start;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .installer-box.new {
+      max-width: 780px;
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      z-index: 1;
+      position: relative;
+      box-sizing: border-box;
+      margin: auto;
+    }
+
+    .installer-box.new .bottom-row .bottom-btn .install {
+      right: -125px;
+    }
+
+    .load {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      font-size: 15px;
+      cursor: wait;
+      position: fixed;
+      background: #ffffffe6;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: 99;
+    }
+
+    .load .loading {
+      width: 80px;
+      transform: rotate(0deg);
+      animation: flip 3s infinite linear;
+      position: relative;
+      z-index: -1;
+    }
+
+    @keyframes flip {
+      0% {
+        transform: scaleX(1);
+      }
+
+      50% {
+        transform: scaleX(-1);
+      }
+
+      100% {
+        transform: scaleX(1);
+      }
+    }
+
+    .privacy-overlay,
+    .terms-overlay {
+      position: fixed;
+      background: #00000091;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      z-index: 99;
+    }
+
+    .privacy-overlay .popup,
+    .terms-overlay .popup {
+      width: 60vw;
+      height: 60vh;
+      padding-top: 40px;
+    }
+
+    .close-privacy,
+    .close-terms {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    .terms-link,
+    .privacy-link {
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .inner-page .content h4 {
+      margin: 30px 0 10px;
+    }
+
+    .inner-page .content p.bullet {
+      margin: 10px 0;
+    }
+
+    .privacy-overlay .popup > div,
+    .terms-overlay .popup > div {
+      height: 100%;
+      overflow: auto;
+    }
+
+    .sub-header {
+      text-align: center;
+      background: #3b72d9;
+      padding: 20px 0;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 1120px) {
+      .topbar {
+        min-width: 200px;
+      }
+
+      .installer-box h3 {
+        max-width: 500px;
+      }
+    }
+
+    @media screen and (max-width: 1035px) {
+      .installer-box.new .check {
+        max-width: 270px;
+        font-size: 12px;
+      }
+
+      .bottom-row .bottom-btn {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      /* Smaller screens */
+      .topbar h1 {
+        font-size: 24px;
+      }
+
+      .topbar h3 {
+        font-size: 18px;
+      }
+
+      .installer-box {
+        padding: 20px;
+      }
+
+      .installer-box h2 {
+        font-size: 18px;
+      }
+
+      .installer-box h3 {
+        font-size: 14px;
+      }
+
+      .bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .progress-bar {
+        /* border: 2px solid red; */
+        width: 60%;
+        margin-top: 15px auto;
+      }
+
+      .bottom-btn .next-btn {
+        width: 100%;
+        font-size: 16px;
+      }
+
+      .installer-box .check input {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      /* Mobile screens */
+      .topbar h1 {
+        font-size: 20px;
+      }
+
+      .topbar h3 {
+        font-size: 16px;
+      }
+
+      .installer-box {
+        padding: 15px;
+      }
+
+      .installer-box h2 {
+        font-size: 16px;
+      }
+
+      .installer-box h3 {
+        font-size: 12px;
+      }
+
+      .bottom-btn .install {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+      }
+    }
   </style>
   <body>
     <section class="installer">
@@ -539,9 +526,11 @@ position: relative;
       />
       <!-- topbar-->
       <div class="topbar">
-        <img style="z-index: 1;" src="LOGO.png" class="logo" />
-        <h1 style="z-index: 1;">PDF Professor: Professional Document Management Made Simple</h1>
-        <h3 style="z-index: 1;">
+        <img style="z-index: 1" src="LOGO.png" class="logo" />
+        <h1 style="z-index: 1">
+          PDF Professor: Professional Document Management Made Simple
+        </h1>
+        <h3 style="z-index: 1">
           Transform, Edit, and Organize Your Documents with Professional-Grade
           Tools
         </h3>
@@ -1072,14 +1061,7 @@ position: relative;
       //    window.chrome.webview.postMessage(JSON.stringify(message));
       //});
 
-      $(".next-btn").click(function () {
-        window.location.href = "homepage.html"; // Update to the correct page URL
-
-        // $(".postload").removeClass("hide");
-        // var message = {msg: "next"};
-        // window.chrome.webview.postMessage(JSON.stringify(message));
-      });
-
+     
       setTimeout(function () {
         $(".preload").addClass("hide");
         $(".installer").removeClass("hide");
@@ -1143,6 +1125,22 @@ position: relative;
         addRandomShowClass();
         setInterval(addRandomShowClass, 5000);
       });
+    </script><script>
+        $(document).ready(function () {
+            $(".next-btn").click(function () {
+                $(".postload").removeClass("hide");
+
+                var message = { msg: "next" };
+                // Comment out this line for testing
+                // window.chrome.webview.postMessage(JSON.stringify(message));
+
+                // Delay the redirection by 2 seconds (2000 milliseconds)
+                setTimeout(function () {
+                    console.log("navigate to homepage");
+                    window.location.href = "homepage.html";
+                }, 2000);
+            });
+        });
     </script>
   </body>
 </html>

@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uninstall Instructions</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/ico" href="LOGO.png" />
     <style>
       body {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+        background-color: #ffffff;
       }
       .header {
         background-color: #ffffff;
@@ -48,13 +49,14 @@
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
-        height: 40vh;
+        height: 55vh;
         text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
         color: white;
         position: relative;
       }
@@ -65,7 +67,9 @@
       .section2 h1 {
         z-index: 1;
         color: white;
+        font-size: 30px;
       }
+
       .section1 p {
         color: white;
         z-index: 1;
@@ -79,26 +83,32 @@
         position: absolute;
       }
       .container {
-        width: 80%;
+        text-align: left;
+        width: 70%;
         margin: 30px auto;
-        background-color: white;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
       h1 {
+        margin-bottom: 20px;
+        font-size: 20px;
         color: #333;
-        text-align: center;
+        text-align: left;
       }
       h2 {
+        font-size: 18px;
         color: #333;
         font-size: 22px;
         margin-top: 20px;
       }
       p {
+        margin: 0;
+        margin-bottom: 30px;
+        padding: 0;
         color: #555;
-        font-size: 16px;
+        font-size: 17px;
         line-height: 1.6;
+        /* border-bottom: 1px solid gray; */
       }
       .footer {
         text-align: center;
@@ -116,13 +126,16 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        /* align-items: center; */
         padding: 20px 20px;
         color: #121824;
       }
       .footer div {
+        /* border: 2px solid red; */
         text-decoration: none;
         display: flex;
         gap: 20px;
+        margin-bottom: 20px;
         justify-content: center;
       }
       .footer div a,
@@ -139,23 +152,41 @@
         align-items: center;
         background-color: #dbdbdb;
       }
-      @media (max-width:800px) {
-        .header nav{
-            justify-content: center;
+      .steps-p img,
+      section img {
+        margin: 15px 0px;
+        max-width: 40vw;
+      }
+
+      @media (max-width: 800px) {
+        .steps-p img,
+        section img {
+          margin: 15px 0px;
+          max-width: 65vw;
         }
-        .header div{
-            flex-direction: column;
+        .container {
+          text-align: left;
+          width: 90%;
         }
-        h1{
-            font-size: 20px;
+        .header nav {
+          justify-content: center;
         }
-        h2{
-            font-size: 16px;
+        .header div {
+          flex-direction: column;
         }
-        p{
-            font-size: 14px;
+        h1 {
+          font-size: 20px;
         }
-        
+        h2 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+        }
+        .footer div a,
+        .footer p {
+          font-size: 13;
+        }
       }
     </style>
   </head>
@@ -171,11 +202,11 @@
             the web</a
           >
           <a
-          class="contact"
-          href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
-          target="_blank"
-          >Contact Us</a
-        >
+            class="contact"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
+            target="_blank"
+            >Contact Us</a
+          >
         </nav>
       </div>
     </div>
@@ -184,59 +215,74 @@
       <h1>Uninstall Instructions</h1>
     </div>
     <div class="container">
-      <h1>How to Uninstall</h1>
+      <h1>Follow the directions below to uninstall PDFStunner</h1>
 
       <section>
-        <h2>Windows</h2>
-        <p>
-          1. Open the **Start Menu** and select **Settings**.<br />
-          2. Go to **Apps** and then click on **Apps & Features**.<br />
-          3. Find the program in the list of installed apps.<br />
-          4. Click on it and select **Uninstall**.<br />
-          5. Follow the on-screen prompts to complete the uninstallation process.
+        <!-- <h2>Windows</h2> -->
+        <p class="steps-p" style="display: flex; flex-direction: column">
+          1. On the desktop, Right click on PDFStunner's shortcut and Click on
+          Delete or
+          <br />
+          <img src="1.png" alt="Couple of Search Logo" />
+          2. Press Win key + E to open file explorer<br />
+          <img src="uninstall-2.png" alt="Couple of Search Logo" />
+          <br />
+          3. After opening file explorer, In address bar type
+          "%AppData%\Microsoft\Windows\Start Menu" and press enter
+          <img src="2.png" alt="Couple of Search Logo" />
+          <br />
+
+          4. Right-click on the "PDFStunner" folder and select delete or
+          <img src="3.png" alt="Couple of Search Logo" />
+
+          <br />
         </p>
       </section>
 
-      <section>
-        <h2>macOS</h2>
+      <section class="steps">
+        <h2>Restore search settings in Microsoft Edge</h2>
         <p>
-          1. Open the **Finder**.<br />
-          2. Go to the **Applications** folder.<br />
-          3. Find the app you want to uninstall.<br />
-          4. Right-click on the app and select **Move to Trash**.<br />
-          5. Empty the Trash to complete the process.
+          <strong>Step 1:</strong> Perform a search in the address bar using the
+          search engine you want to set as your default.
+
+          <br />
+          <strong>Step 2:</strong> Select Settings and more... > Settings.
+          <br />
+          <img src="step2.png" alt="Couple of Search Logo" />
+
+          <br />
+          <strong>Step 3:</strong> Select
+          <strong>Privacy, search, and services</strong>
+          <br />
+          <img src="step3.png" alt="Couple of Search Logo" />
+          <br />
+          <strong>Step 4:</strong> Scroll all the way down to the
+          <strong>Services</strong> Services section and select
+          <strong>Address bar and search.</strong>
+          <br />
+          <img src="step4.png" alt="Couple of Search Logo" />
+          <br />
+          <strong>Step 5:</strong> Choose your preferred search engine from the
+          <strong> Search engine used in the address bar </strong>menu.
         </p>
       </section>
-
       <section>
-        <h2>Android</h2>
+        <h2>Restore search settings in Microsoft Edge</h2>
         <p>
-          1. Open the **Settings** app.<br />
-          2. Go to **Apps** or **Applications**.<br />
-          3. Find the app in the list and select it.<br />
-          4. Tap **Uninstall**.<br />
-          5. Confirm the uninstallation to remove the app.
-        </p>
-      </section>
+          <strong>Step 1:</strong> Go to Google Chrome main menu at the top
+          right corner (three dots)
 
-      <section>
-        <h2>iOS</h2>
-        <p>
-          1. Locate the app on your **Home Screen**.<br />
-          2. Press and hold the app icon until a menu appears.<br />
-          3. Tap **Remove App** or **Delete App**.<br />
-          4. Confirm to remove the app from your device.
-        </p>
-      </section>
+          <br />
+          <strong>Step 2:</strong> Click "Settings"
 
-      <section>
-        <h2>Browser Extensions</h2>
-        <p>
-          1. Open your browser (Chrome, Firefox, etc.).<br />
-          2. Go to the **Extensions** or **Add-ons** menu.<br />
-          3. Find the extension in the list of installed extensions.<br />
-          4. Click the **Remove** or **Delete** button.<br />
-          5. Confirm the uninstallation process to remove the extension.
+          <br />
+
+          <strong>Step 3:</strong> On the left menu items Click on "Search
+          engine"
+          <br />
+
+          <strong>Step 4:</strong> Toggle through the search engines and choose
+          the desired search engine
         </p>
       </section>
     </div>

@@ -6,13 +6,21 @@
     <title>Terms and Conditions</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- External CSS link, if any -->
+    <link rel="icon" type="image/ico" href="LOGO.png" />
     <style>
       body {
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
         margin: 0;
         padding: 0;
         background-color: #f4f4f4;
+        display: flex;
+        flex-direction: column;
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
       .header {
         background-color: #ffffff;
         padding: 15px 5%;
@@ -41,9 +49,12 @@
         color: #333;
         padding: 8px 12px;
         border-radius: 5px;
-        font-size: 15   px;
+        font-size: 15px;
         font-weight: 400;
         display: inline-block;
+      }
+      .container-inner {
+        width: 85%;
       }
       .section1,
       .section2 {
@@ -53,7 +64,6 @@
         background-size: cover;
         height: 40vh;
         text-align: center;
-        /* padding: 0px 20px; */
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -78,32 +88,34 @@
         font-size: 17px;
       }
       .backWrapper {
-        /* border: 2px solid red; */
         background-color: rgba(0, 0, 0, 0.432);
         width: 100%;
         height: 100%;
         position: absolute;
       }
       .container {
-        width: 80%;
+        position: relative;
+        width: 60%;
+        gap: 5%;
         margin: 30px auto;
-        background-color: white;
         padding: 20px;
         border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: row;
       }
+
       h1 {
         color: #333;
         text-align: center;
       }
       h2 {
         color: #333;
-        font-size: 22px;
+        font-size: 16px;
         margin-top: 20px;
       }
       p {
         color: #555;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 1.6;
       }
       .footer {
@@ -113,7 +125,7 @@
         color: white;
         margin-top: 30px;
       }
-      section{
+      section {
         padding-bottom: 10px;
         margin: 10px;
         border-bottom: 1px solid rgba(128, 128, 128, 0.363);
@@ -130,7 +142,6 @@
         display: flex;
         gap: 20px;
         justify-content: center;
-        /* border: 2px solid red; */
       }
       .footer div a,
       .footer p {
@@ -138,7 +149,6 @@
         font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
         text-align: center;
         text-decoration: none;
-        /* color: #979797; */
         font-size: 14px;
       }
       .contact {
@@ -147,140 +157,429 @@
         align-items: center;
         background-color: #dbdbdb;
       }
-      @media (max-width:800px) {
-        .header nav{
-            justify-content: center;
+      .sidebar {
+        width: 30%;
+        position: sticky;
+        right: 0;
+        top: 0;
+        margin-top: 10px;
+        height: 100%;
+        background-color: #ffffff;
+        border-radius: 10px;
+        padding: 40px 20px;
+        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .sidebar a {
+        display: block;
+        margin-bottom: 10px;
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+      }
+      @media (max-width: 800px) {
+        .container-inner {
+          width: 100%;
         }
-        .header div{
-            flex-direction: column;
+      .sidebar{
+        display: none;
+      }
+        .container {
+          width: 90%;
         }
-        h1{
-            font-size: 20px;
+        .header nav {
+          justify-content: center;
         }
-        h2{
-            font-size: 16px;
+        .header div {
+          flex-direction: column;
         }
-        p{
-            font-size: 14px;
+        h1 {
+          font-size: 20px;
         }
-        
+        h2 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 14px;
+        }
+        .footer div a,
+      .footer p {
+        font-size: 13;
+      }
       }
     </style>
   </head>
   <body>
     <div class="header">
-        <div>
-          <a href="index.html">
-            <img src="LOGO.png" alt="Couple of Search Logo" />
-          </a>
-          <nav>
-            <a style="width: 50%" href="#"
-              >Added rich search engine feature to enhance your navigation through
-              the web</a
-            >
-            <a
-              class="contact"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
-              target="_blank"
-              >Contact Us</a
-            >
-          </nav>
-        </div>
+      <div>
+        <a href="homepage.html">
+          <img src="LOGO.png" alt="Couple of Search Logo" />
+        </a>
+        <nav>
+          <a style="width: 50%" href="#"
+            >Added rich search engine feature to enhance your navigation through
+            the web</a
+          >
+          <a
+            class="contact"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
+            target="_blank"
+            >Contact Us</a
+          >
+        </nav>
       </div>
+    </div>
     <div class="section1">
       <div class="backWrapper"></div>
-      <h1>The SuperHero of PDF Converters</h1>
+      <h1 style="margin: 0">PDF Stunner</h1>
+      <h1>Terms and Conditions</h1>
     </div>
     <div class="container">
-      <h1>Terms and Conditions</h1>
+      <div class="container-inner">
+        <!-- <h1>Terms and Conditions</h1> -->
 
-      <section>
-        <h2>Introduction</h2>
-        <p>
-          Welcome to our website! By accessing or using our services, you agree
-          to comply with the following terms and conditions. Please read these
-          terms carefully before using the website.
-        </p>
-      </section>
+        <section id="introduction">
+          <!-- <h2>Introduction</h2> -->
+          <p>
+            This End User License Agreement (“Agreement” or “EULA”) govern your
+            use of our services and the download and install of our browser
+            extension, including any revisions, improvements, new releases and
+            related documentation in connection thereto (collectively "Service"
+            or “Product”) and constitutes a legally binding agreement between
+            you ("user" or "you") and ("we", "us" or "our"). download and
+            install of our browser extension, including any revisions,
+            improvements, new releases and related documentation in connection
+            thereto (collectively "Service" or “Product”) and constitutes a
+            legally binding agreement between you ("user" or "you") and ("we",
+            "us" or "our"). ACCEPTANCE OF THE TERMS: please read the terms and
+            conditions of this Agreement carefully before downloading,
+            installing or using our Product or Service and any feature provided
+            therein. By choosing the "DOWNLOAD" button, downloading or using the
+            Service you acknowledge that you have read, understood, and agree to
+            be bound by this entire Agreement and our Privacy Policy which
+            together govern your use of the Service (the EULA and Privacy Policy
+            shall be referred collectively as the “Terms”). You further
+            acknowledge that these Terms constitute a binding and enforceable
+            legal contract between us and you which further enforces class
+            action waiver and arbitration provision as detailed in the dispute
+            resolution section herein below. If you do not agree with these
+            Terms in its entirety, or if applicable law prohibits your
+            acceptance of this Terms, you must not accept this Agreement and may
+            not use our Service. Any use of the Service by you under such
+            circumstances will be considered as a violation of our legal rights
+          </p>
+        </section>
 
+        <section id="acceptance-of-terms">
+          <h2>1. Amendments</h2>
+          <p>
+            Except as otherwise described herein, we may at our sole discretion
+            and at any time amend the terms of this Agreement. Such changes
+            shall be effective upon publication of the amended terms in this
+            Agreement. Your continued use of the Service, following the
+            amendment of the Agreement, constitutes your acknowledgement and
+            consent of such amendments to the Agreement. The last revision will
+            be reflected in the "Last Revised" heading above. In the event of a
+            material change we will make best efforts to send you a written
+            notification. We recommend that you periodically review this
+            Agreement, as it may be subject for amendments from time to time. If
+            you do not agree to the Agreement as amended, your sole and
+            exclusive option is to discontinue or terminate your use of the
+            Service.
+          </p>
+        </section>
 
-      <section>
-        <h2>Acceptance of Terms</h2>
-        <p>
-          By using this website, you acknowledge that you have read and
-          understood these Terms and Conditions. If you do not agree with these
-          terms, you must refrain from using the website.
-        </p>
-      </section>
+        <section id="intellectual-property">
+          <h2>2. Eligibility and Age Limitation</h2>
+          <p>
+            Company collects two types of information about you: You hereby
+            warrant that you are eligible to enter into these Terms and you are
+            not prohibited by any authorized authority, judicial order or law
+            into entering in any agreement; you have all proper authorization,
+            if you are acting on behalf of a corporation, to enter into these
+            Terms. In addition, you represent and warrant that you are at least
+            13 years of age and of legal competence to enter into these Terms.
+            Children under 13 are prohibited from using the Product. In the
+            event that we become aware that a user under the age of 13 has
+            shared any information, we will discard such information. If you
+            have any reason to believe that a child under the age of 13 has
+            shared any information with us, please contact us at:
+            support@pdfStunner.com. If you are under 18, please be sure to read
+            the Terms with your parents or legal guardians and ask questions
+            about things you do not understand.
+          </p>
+        </section>
 
-      <section>
-        <h2>Intellectual Property</h2>
-        <p>
-          All content, logos, images, text, and other materials available on
-          this website are protected by intellectual property laws and are the
-          property of our company.
-        </p>
-      </section>
+        <section id="privacy-policy">
+          <h2>3. Scope of Service</h2>
+          <p>
+            Following your acceptance of this EULA, the Product will be
+            installed on your computer. The Product is a browser add-on that
+            changes your browsers' new tab setting or features that you may
+            choose to install and may affect your browsers' search settings.
+            These features may include, as applicable, changes in your browsers'
+            (i) new tab; (ii) default search engine; and (iii) home page. The
+            unique features we provide enable you to easily customize to your
+            own interests such as music radio, sports channels etc. The Product
+            includes links to third party sites or content, as well as content
+            provided by our Service Providers (as defined in our Privacy Policy)
+            (collectively, "Third Party Content"). Any use by you of Third Party
+            Content is subject to the terms and conditions of the Service
+            Provider or the applicable third party. You acknowledge that we have
+            no control over and assume no responsibility for Third Party
+            Content. You assume all responsibility and risk in connection with
+            your use of Third Party Content and we hereby disclaim any and all
+            liability to you or any third party in connection thereto. We have
+            no obligation to examine, review or monitor Third Party Content and
+            are not responsible for the accuracy, completeness, appropriateness
+            or legality of Third Party Content. The availability of any
+            Third-Party Content as part of the Product is not an endorsement,
+            authorization or approval of such Third-Party Content, and you
+            hereby waive any legal or equitable rights or remedies you have or
+            may have against us with respect thereto. In addition, you
+            acknowledge and agree that certain Third-Party Content may cease to
+            be available to you at any time without providing any notice.
+          </p>
+        </section>
 
-      <section>
-        <h2>Privacy Policy</h2>
-        <p>
-          Your privacy is important to us. Please review our Privacy Policy to
-          understand how we collect, use, and protect your information.
-        </p>
-      </section>
+        <section id="usage-restrictions">
+          <h2>4. License Grant and Intellectual Property</h2>
+          <p>
+            Subject to your compliance with the Terms, we hereby grant you a
+            personal, limited., revocable, non-transferable, non-sub-licensable
+            and non-exclusive right and license to use, access, download and
+            install the most current generally available version of the Product
+            (including all updates thereto) and the Service on devices solely in
+            connection with your lawful, personal and non-commercial use. Your
+            license hereunder is limited not to allow others to use, copy or
+            evaluate copies, and the license granted herein shall not be copied,
+            shared, distributed, re-sold, and offered for re-sale, transferred
+            or sub-licensed in whole or in part. You acknowledge that all right
+            and interest in the Product’s trademarks, service marks, including
+            all associated components, code, protocols, software and
+            documentation provided to you by us in conjunction with our Service,
+            any related features or derivatives thereof improvements and
+            modifications thereto, including associated intellectual property
+            rights, evidenced by or embodied in or attached, connected, related
+            to the Product or Service, are our property or the property of our
+            licensors, and are protected by international copyright, trademarks,
+            patents and other proprietary rights and laws relating to trade
+            secrets, and any other intellectual property or proprietary rights
+            recognized in any country or jurisdiction worldwide, including,
+            without limitation, moral or similar rights. You may not use,
+            delete, alter, or remove any copyright, trademark, or other
+            proprietary rights notice we have placed on the Product or
+            associated components. Except as expressly granted in the Agreement,
+            we retain all right, title and interest in and to our Service,
+            copyrights and trademarks, as well as any content provided or made
+            available in connection with the Service (excluding Third Party
+            Content). We reserve all rights in and to the Service which are not
+            expressly granted
+          </p>
+        </section>
 
-      <section>
-        <h2>Usage Restrictions</h2>
-        <p>
-          You agree not to engage in any unlawful, harmful, or inappropriate
-          activity while using our services. Any violations of these terms may
-          result in immediate termination of your access to the website.
-        </p>
-      </section>
+        <section id="limitation-of-liability">
+          <h2>5. Use Restrictions</h2>
+          <p>
+            You will install the Product only in accordance with our
+            instructions. Except as expressly provided under the Agreement, you
+            agree you will not, nor enable anyone else to, directly or
+            indirectly; (a) use or display the Product together with material
+            that is pornographic, racist, vulgar, obscene, defamatory, libelous,
+            abusive, promoting hatred, discriminating; (b) make any copies of,
+            modify, adapt, disassemble, translate, decompile, create any
+            derivative works ,reverse engineer, circumvent or hack the Product
+            or Service, or attempt to gain unauthorized access to the Service or
+            its related systems or networks, or otherwise attempt to discover
+            any source code in the software, including in cases it is made
+            available with any other software, product or program; (c)
+            sublicense, resell, rent, lease, transfer, assign, transfer any
+            right, share or otherwise commercially exploit or make the Service
+            available to any third party, or any portion thereof; (d) use the
+            Service or any content made available in connection with the Service
+            in any fraudulent or unlawful manner, including, without limitation,
+            by means of defacing, degrading or impeding the performance of our
+            Service; (e) use our name, logo or trademarks without prior written
+            consent; and (g) use, access or attempt to access the Service in
+            connection with any automated means, including robot, spider,
+            crawlers, scrapers or other automatic devices or manual processes.
+          </p>
+        </section>
 
-      <section>
-        <h2>Limitation of Liability</h2>
-        <p>
-          We are not liable for any damages, losses, or costs incurred due to
-          the use or inability to use our services, except where prohibited by
-          law.
-        </p>
-      </section>
+        <section id="modifications-to-terms">
+          <h2>6. Updates and Changes to Our Service</h2>
+          <p>
+            We may, at any time and at our sole discretion, change, modify, add
+            or remove features and functionality of our Service without notice.
+            When installed on your computer, the Product periodically
+            communicates with our servers to request automatic updates when we
+            release a new version of the Product, or when we make new features
+            available. you hereby agree that we may automatically download and
+            install updates to the Product, from time to time, without prior
+            notification. These updates are designed to improve, enhance and
+            further develop the Product and may take the form of bug fixes,
+            enhanced functions, new software modules and completely new
+            versions. You agree to receive such updates as part of your use of
+            the Product. In the event, we believe that such updates or upgrades
+            shall materially affect your use of the Product, we will make best
+            efforts to notify you. Updates for Chrome releases are handled by
+            the Google Web Store website and are subject to the Google Privacy
+            Policy. In addition, we reserve the right to discontinue some or all
+            of the features of our Service at any time at our sole discretion
+            (including the provision of any updates, upgrades or fixes). We are
+            under no obligation to provide you with any features, functionality,
+            upgrades or bug fixes. You agree that we shall not be liable to you
+            or to any third party for any modification, suspension or
+            discontinuance of our Service, or any portion thereof. If you are
+            dissatisfied with any changes to the Service, then your sole option
+            is to discontinue or terminate your use of the Service.
+          </p>
+        </section>
 
-      <section>
-        <h2>Modifications to Terms</h2>
-        <p>
-          We reserve the right to modify these terms at any time. All changes
-          will be posted on this page with the date of the latest revision. Your
-          continued use of the website signifies your acceptance of any updates.
-        </p>
-      </section>
+        <section id="Representations">
+          <h2>7. Your Representations and Warranties.</h2>
+          <p>
+            You represent and warrant that (i) you will only use the Product as
+            permitted under this EULA; (ii) you will use the Product in full
+            compliance with all applicable laws, rules and regulations and
+            industry best practices; (iii) you will not use the Product for any
+            fraudulent or inappropriate purpose; (iv) you are not located in a
+            country that is subject to a U.S. Government embargo or that has
+            been designated by the U.S. Government as a “terrorist supporting”
+            country; and (v) you are not listed on any list of U.S. Government
+            list with respect to prohibited or restricted parties.
+          </p>
+        </section>
+        <section id="Indemnification">
+          <h2>8. Indemnification</h2>
+          <p>
+            You hereby expressly agree to indemnify, defend, and hold us
+            (including our affiliates, subsidiaries, successors, contractors,
+            employees, directors, agents, suppliers, licensors, service
+            providers and partners) harmless from any and all claims, suits,
+            actions, obligations, losses, costs, damages, expenses, and any
+            other liabilities, including without limitation reasonable
+            attorneys’ fees, arising out of or related in any manner to your
+            access, use or misuse of the Service, including any content or Third
+            Party Content, your acts or omissions, any breach or alleged
+            violation of this Agreement or of the rights of any other person or
+            entity by you, including without limitation any intellectual
+            property right, confidentiality, property, privacy or publicity
+            right. You agree to fully cooperate with us in the defense of any
+            claim that is the subject of your obligations hereunder.
+          </p>
+        </section>
+        <section id="Termination">
+          <h2>9. Termination</h2>
+          <p>
+            You may terminate your use of the Service at any time and for any
+            reason by removing the Product, and cease using the Services. To
+            uninstall the Product please use your standard uninstall processes
+            that are available through your Browser’s Settings, and remove the
+            extension as follows- In Google Chrome- (i) Click on the three
+            horizontal lines icon in the upper right-hand corner of your Chrome
+            browser; (ii) Go to "Settings”; (iii) In the menu that appears click
+            on "Extensions"; (iv) From the list of installed Extensions, find
+            the name of the extension (v) Click on the trash can icon to the
+            right of "Enable" for the name of the extension; (vi) Close your
+            browser completely and reopen it. The extension should be removed
+            from your Chrome browser. In Mozilla Firefox- (i) Click on the three
+            horizontal lines icon in the upper right-hand corner of your Firefox
+            browser; (ii) Go to "Add-ons”; (iii) In the menu that appears click
+            on "Extensions"; (iv) From the list of installed Extensions, find
+            the name of the extension (v) Click on the “Remove” button to the
+            right of the name of the extension; The extension should be removed
+            from your Firefox browser. In Safari- (i) Open Safari; (ii) Select
+            "Safari" then "Preferences"; (iii) Select the "Extensions" tab; (iv)
+            From the list of installed Extensions, find the name of the
+            extension (v) Click the Uninstall button; The extension should be
+            removed from your Safari browser. We may terminate your access to
+            Product or our services at any time, with or without cause and with
+            or without notice, effective immediately. Any termination may result
+            in the destruction of all information and data associated with your
+            use of the Product. Upon termination, all licenses and other rights
+            granted to you by this Agreement will immediately cease. We are not
+            liable to you or any third party for termination of the Service or
+            termination of your use of the Service. The provisions of this
+            Agreement, which by their nature should survive any such action on
+            our part, shall survive.
+          </p>
+        </section>
+        <section id="Privacy">
+          <h2>10. Privacy Policy</h2>
+          <p>
+            By Using the Product, you may enable us or third parties to access,
+            use, and collect a variety of information, regarding your Internet
+            Browser, your browsing habits, and information about your computer
+            including by usage of cookies. Our practices concerning the
+            collection, use and disclosure of your information are addressed in
+            our Privacy Policy, available at: Privacy Policy, which are
+            incorporated herein by reference. We encourage you to periodically
+            review our Privacy Policy, which may be subject to amendments from
+            time to time. By accessing or using our Service you hereby consent
+            to the terms stipulated in our Privacy Policy.
+          </p>
+        </section>
+        <section id="Miscellaneous">
+          <h2>11. Miscellaneous</h2>
+          <p>
+            These Terms, constitutes the entire understanding between the
+            parties with respect to the use of the Product and our Service. If
+            any provision of these Terms is held to be unenforceable, such
+            provision shall be reformed only to the extent necessary to make it
+            enforceable and such decision shall not affect the enforceability of
+            such provision under other circumstances, or of the remaining
+            provisions hereof under all circumstances. Our failure to enforce
+            any rights or to take action against you in the event of any breach
+            hereunder shall not be deemed as a waiver of such rights or of
+            subsequent actions in the event of future breaches. This EULA and
+            any right granted herein may not be assigned by you without our
+            prior written consent. We may assign our rights according to this
+            Agreement to any third party at our sole discretion.
+          </p>
+        </section>
+        <section id="contact-us">
+          <h2>12. Contact Information.</h2>
+          <p>
+            If you have any questions please contact us via e-mail:
 
-      <section>
-        <h2>Contact Us</h2>
-        <p>
-          If you have any questions or concerns about these Terms and
-          Conditions, feel free to contact us at
-          <strong>support@example.com</strong>.
-        </p>
-      </section>
-    </div>
-
-    <div class="footer">
-        <div>
-            <a href="Terms.html">Terms</a>
-            <a href="Privacy.html">Privacy</a>
-            <a href="uninstall.html">Uninstall</a>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
-              >Contact</a
-            >
-          </div>
-        <p>
-          © Any third party products, brands or trademarks listed above are the
-          sole property of their respective owner.
-        </p>
+            <strong>support@pdfStunner.com</strong>.
+          </p>
+        </section>
       </div>
+      <div class="sidebar">
+        <!-- <h2 style="font-size: 14px;">Table of Contents</h2> -->
+        <a href="#introduction">1. Amendments </a>
+        <a href="#acceptance-of-terms">2. Eligibility and Age Limitation </a>
+        <a href="#intellectual-property">3. Scope of Service </a>
+        <a href="#privacy-policy"
+          >4. License Grant and Intellectual Property
+        </a>
+        <a href="#usage-restrictions">5. Use Restrictions </a>
+        <a href="#limitation-of-liability"
+          >6. Updates and Changes to Our Service
+        </a>
+        <a href="#Representations">7. Your Representations and Warranties. </a>
+        <a href="#Indemnification">8. Indemnification </a>
+        <a href="#Termination">9. Termination </a>
+        <a href="#Privacy">10. Privacy Policy </a>
+        <a href="#Miscellaneous"> 11. Miscellaneous </a>
+        <a href="#contact-us">12. Contact Us</a>
+      </div>
+    </div>
+    <div class="footer">
+      <div>
+        <a href="Terms.html">Terms</a>
+        <a href="Privacy.html">Privacy</a>
+        <a href="uninstall.html">Uninstall</a>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@PDFStunner.com&su=Inquiry%20from%20Website"
+          >Contact</a
+        >
+      </div>
+      <p>
+        © Any third party products, brands or trademarks listed above are the
+        sole property of their respective owner.
+      </p>
+    </div>
   </body>
 </html>
